@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Detail</title>
+</head>
+<body>
+<h1>Order Detail</h1>
+<p><strong>Order ID:</strong> <span th:text="${order.id}"></span></p>
+<p><strong>Menu Name:</strong> <span th:text="${order.menuName}"></span></p>
+<p><strong>Price:</strong> $<span th:text="${order.menuPrice}"></span></p>
+<p><strong>Quantity:</strong> <span th:text="${order.quantity}"></span></p>
+<p><strong>Status:</strong> <span th:text="${order.status}"></span></p>
+</body>
+</html>
