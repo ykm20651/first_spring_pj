@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order List</title>
+</head>
+<body>
+<h1>Order List</h1>
+<p th:text="${message}"></p> <!-- 삭제 완료 메시지 등 추가 메시지 표시 -->
+<ul>
+  <li th:each="order : ${orders}">
+    <!--${orders}는 컨트롤러에서 orders라는 Model의 객체(=Model에 담긴 데이터)를 뷰에서 가져와서 사용하는 방식. -->
+    <!--
+    1. Model 객체는 스프링에서 자동으로 주입되며, 컨트롤러 메서드의 파라미터로 넘겨줌.
+    2. Model에 데이터를 담아 뷰로 전달하고, 뷰에서는 그 데이터를 출력할 수 있음.
+    3. 뷰에서는 ${} 구문을 사용해 Model에 담긴 데이터를 변수처럼 출력할 수 있음.
+    * 이렇게 해서 Model은 뷰와 컨트롤러 간에 데이터를 주고받는 중간 다리 역할을 수행함!!
+    -->
+    <strong>Order ID:</strong> <span th:text="${order.id}"></span><br>
+    <strong>Menu Name:</strong> <span th:text="${order.menuName}"></span><br>
+    <strong>Price:</strong> $<span th:text="${order.menuPrice}"></span><br>
+    <strong>Quantity:</strong> <span th:text="${order.quantity}"></span><br>
+    <strong>Status:</strong> <span th:text="${order.status}"></span>
+    <hr>
+  </li>
+</ul>
+</body>
+</html>
